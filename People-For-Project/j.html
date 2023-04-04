@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People For</title>
+    <link rel="stylesheet" href="Style/sty.css">
+	<link rel="icon" type="image/x-icon" href="images/logo.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+</head>
+<style>
+	.container {
+	text-align: center;
+	font-size: 20pt;
+	font-family: 'arial';
+	 
+}
+
+.far {
+ 
+}
+
+.fas {
+	color: red;
+}
+
+.heart {
+	cursor: pointer;
+}
+
+.pulse {
+	animation: pulse .5s;
+}
+
+@keyframes .pulse {
+	0% {transform: scale(1); }
+	100% {transform: scale(1);}
+	100% {transform: scale(1);}
+}
+<!---retweet-->
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #B33;
+}
+
+a:hover .name {
+  text-decoration: underline;
+}
+
+p {
+  margin-top: 0;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.card.summary {
+  padding: 0;
+}
+
+.card.summary > .background {
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.card.summary > .information {
+  color: #333;
+  border-top: 1px solid #eee;
+  padding: 8px 12px;
+}
+
+.card.summary > .information > .title {
+  font-weight: bold;
+}
+
+.card.summary > .information > div:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.card.summary .domain {
+  color: #888;
+}
+
+.tweets-container {
+  margin: auto;
+  max-width: 600px;
+}
+
+.tweets-header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: -1px;
+}
+
+.tweets-container > .tweet:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.tweet {
+  position: relative;
+  border-radius: 0;
+  padding-left: 72px;
+  margin-bottom: -1px;
+}
+
+.tweet > .author > .avatar {
+  position: absolute;
+  border-radius: 4px;
+  top: 12px;
+  left: 12px;
+  width: 48px;
+  height: 48px;
+}
+
+.tweet > .author > .name {
+  font-weight: bold;
+}
+
+.tweet > .author > .username {
+  color: #888;
+}
+
+.tweet > .actions > .fa {
+  color: #888;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-right: 36px;
+}
+
+.tweet > .actions > .fa-reply:hover {
+  color: dodgerblue;
+}
+
+.tweet > .actions > .fa-retweet:hover {
+  color: limegreen;
+}
+
+.tweet > .actions > .fa-heart:hover {
+  color: #B33;
+}
+.fa-heart-o {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+</style>
+<body>
+    
+ 
+
+<section class="create-post">
+	<img class="create-post__avatar" src="images/anil.png" alt="" />
+	<form id="create-post-form" class="create-post__form" action="">
+		<div class="create-post__text-wrap">
+			<textarea aria-label="Write something about you..." name="post-text" id="create-post-txt" oninput="this.parentNode.dataset.replicatedValue = this.value" placeholder="Write something about you..."></textarea>
+		</div>
+
+		<div class="create-post__media-wrap" id="create-post-media-wrap"></div>
+
+		<div class="create-post__buttons">
+			<div class="create-post__assets-buttons">
+				<button type="button" aria-label="Add an image to the post" class="create-post__asset-btn" for="create-post-media" onclick="this.querySelector('input').click()">
+					<img class="icon" src="images/cam.png" alt="" />
+					Photo
+					<input type="file" name="post-img" id="create-post-media" accept=".png, .jpg, .jpeg, .gif" />
+				</button>
+				<button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+					<img class="icon" src=" images/qu.png" alt="" />
+					Quote
+				</button>
+				<button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+					<img class="icon" src="images/lin.png" alt="" />
+					Link
+				</button>
+				<button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+					<img class="icon" src="images/chat.png" alt="" />
+					Chat
+				</button>
+				<button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+					<img class="icon" src="images/audi.png" alt="" />
+					Audio
+				</button>
+				<button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+					<img class="icon" src="images/vil.png" alt="" />
+					Video
+				</button>
+			</div>
+			<button class="create-post__submit" type="submit" disabled id="create-post-submit-btn">Publish</button>
+		</div>
+	</form>
+</section>
+
+<section id="posts-container">
+	<article class="post">
+		<img class="post__avatar" src="images/anil.png" alt="" />
+
+		<div class="post__content">
+			<header class="post__header">
+				<p class="post__user">Anil Kumar Kolla</p>
+
+				<div class="post__meta">
+					<p class="post__reblogs">3,908</p>
+                     
+					 
+					<div class="container" >
+						<i class="far fa-heart js-heart heart"></i>  
+				</div>
+				<span class="fa fa-retweet"></span>
+				</div>
+			</header>
+
+			 
+ 
+	 
+	</article>
+
+	<article class="post">
+		<img class="post__avatar" src="images/anil.png" alt="" />
+
+		<div class="post__content">
+			<header class="post__header">
+				<p class="post__user">Anil Kumar Kolla</p>
+
+				<div class="post__meta">
+					<p class="post__reblogs">3,908</p>
+
+					<div class="container" >
+						<i class="far fa-heart js-heart heart"></i>  
+				</div>
+				<span class="fa fa-retweet"></span>
+				<span id = heart><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
+			</header>
+
+			<div class="post__body">
+				<img class="post__img" src="images/allu.png" alt="" />
+				 
+			</div>
+
+			<div class="post__footer">
+				<span>#2023s</span>
+				<span>#People For</span>
+				<span>#People for</span>
+			</div>
+		</div>
+	</article>
+
+	<article class="post">
+		<img class="post__avatar" src="images/anil.png" alt="" />
+
+		<div class="post__content">
+			<header class="post__header">
+				<p class="post__user">Anil Kumar Kolla</p>
+
+				<div class="post__meta">
+					<p class="post__reblogs">3,908</p>
+
+					<div class="container" >
+						<i class="far fa-heart js-heart heart"></i>  
+				</div>
+				<div class="container" >
+					<i class="far fa-heart js-heart heart"></i>  
+			</div>
+			<span class="fa fa-retweet"></span>
+				</div>
+			</header>
+
+			<div class="post__body">
+				<img class="post__img" src="images/gal.png" alt="" />
+				 
+			</div>
+
+			<div class="post__footer">
+				<span>#2023</span>
+				<span>#People For</span>
+				<span>#Anil Kumar KOlla</span>
+			</div>
+		</div>
+	</article>
+
+	<article class="post">
+		<img class="post__avatar" src="images/anil.png" alt="" />
+
+		<div class="post__content">
+			<header class="post__header">
+				<p class="post__user">Anil kumar Kolla</p>
+
+				<div class="post__meta">
+					<p class="post__reblogs">3,908</p>
+
+					 
+					<div class="container" >
+						<i class="far fa-heart js-heart heart"></i>  
+				</div>
+				<span class="fa fa-retweet"></span>
+			</header>
+
+			<div class="post__body">
+				<img class="post__img" src="images/god.png" alt="" />
+			</div>
+
+			 
+			<div class="post__footer">
+				<span>#2023</span>
+				<span>#People For</span>
+				<span>#Anil Kumar KOlla</span>
+			</div>
+		</div>
+	</article>
+</section>
+<script src="Script/scr.js"></script>
+<script>
+	// It checks to see if the span id #heart has "liked" class, if not it run the else statement and adds the "liked" class, on a 2nd click it see that it has the "liked" class so it replaces the ihherHTML and removes class, on 3rd click it runs the else statement again cause there is no "liked" class(remomved on 2nd click).
+
+ 
+ 
+</body>
+</html>

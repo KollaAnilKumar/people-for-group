@@ -1,0 +1,156 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People For</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="Style/about.css">
+ </head>
+ <style>
+  .navbar {
+  overflow: hidden;
+  background-color: white;
+  border-radius:  30px;
+}
+
+.navbar a {
+  float: right;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px ;
+  
+  margin-right: 40px;
+  gap: 40px;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+  margin-right: 40px;
+   
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(107, 112, 213);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #167cd5;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(232, 227, 227);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(20, 18, 18);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@media screen and (max-width: 500px){
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       
+  }
+}
+ </style>
+ 
+ <body>
+  <div class="navbar">
+    
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="register.html">Register Here!</a> 
+    <a href="login.html"> Login</a>
+    
+    
+    
+    <div class="dropdown">
+      <button class="dropbtn">People For App 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">App Features</a>
+        <a href="#"> App Download</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </div>
+  
+    <div class="we-are-block">
+
+        <div id="about-us-section">
+      
+          <div class="about-us-image">
+      
+            <img src="images/people.png" width="808" height="458" alt="Lobby Image">
+      
+          </div>
+      
+          <div class="about-us-info">
+      
+            <h2>People For Updated Version </h2>
+      
+            <p> Pepole for Updated Version originated as a way to interact with friends and family but was later adopted by businesses that wanted to take advantage of a popular new communication method to reach out to customers. The power of People For is the ability to connect and share information with anyone on Earth, or with many people simultaneously.</p>
+      
+            <a href="#" title="About Us Button">ABOUT US</a>
+      
+          </div>
+      
+        </div>
+      
+        <div id="history-section">
+      
+          <div class="history-image">
+      
+            <img src="images/bg.png" width="951" height="471" alt="Building Pic">
+      
+          </div>
+      
+          <div class="history-info">
+      
+            <h2>People For Also Called As (PF). </h2>
+      
+            <p>People For is an online social media .  Developed By  fellow Edubridge students Shahista Tazeen, Prameela Banooth, Sai Teja Komma, and Anil Kumar Kolla, its name comes from  Edubridge Students think.</p>
+      
+            <a href="#" title="History Button">HISTORY</a>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+ </body>
+ </html>
